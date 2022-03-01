@@ -81,7 +81,6 @@ public void removeCard(int i){
      // Cards Value
      public int cardsValue(){
          int totalValue = 0;
-         int Ace = 0;
          int i;
          
          for(Card CardsCard : this.cards){
@@ -110,20 +109,16 @@ public void removeCard(int i){
              break;
              case KING : totalValue += 10;
              break;
-             case ACE : Ace += 11;
+             case ACE : if(totalValue > 10){
+                 totalValue += 1;
+             }
+             else{
+                 totalValue += 11;
+             }
              break;
          }
         }
-         // Calculate the Ace value
-         for(i = 0; i<totalValue; i++){
-             if(totalValue > 10){
-                 Ace += 1;
-             }
-             else{
-                 Ace += 11;
-             }
-             
-        }
-         return Ace;
+         
+         return totalValue;
      }
 }
