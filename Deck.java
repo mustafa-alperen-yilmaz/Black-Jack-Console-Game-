@@ -109,12 +109,12 @@ public void removeCard(int i){
              break;
              case KING : totalValue += 10;
              break;
-             case ACE : if(totalValue > 10){
-                 totalValue += 1;
-             }
-             else{
+             case ACE : 
+                 if(totalValue > 10){
+                        totalValue += 1;
+                 }else{
                  totalValue += 11;
-             }
+                 }
              break;
          }
         }
